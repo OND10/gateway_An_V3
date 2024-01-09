@@ -1,0 +1,14 @@
+# Today we should complete what is inside the domain
+# Models:
+# 1) Companies    2)Services     4)Counteries   5)Provinces  6)Cities  7)Categories   8)Currency    
+# Relations:
+# One to One relationship between the companies and providers
+# One to Many relationship between the currency and company 
+# One to many relationship between the conteries and company
+# One to many relationship between the Provinces and countery
+# One to many relationship between the cities and Provinces
+# many to many relationship between the services and company
+# One to many relationship between the conteries and company
+# One to many relationship between the categories and company
+# One to many relationship between the customer and company
+
