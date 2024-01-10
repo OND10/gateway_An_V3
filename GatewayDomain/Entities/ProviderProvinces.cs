@@ -19,17 +19,5 @@ namespace GatewayDomain.Entities
         public int ProvinceId { get; set; }
         public int CompanyId { get; set; }
 
-        [ForeignKey(nameof(ProviderId))]
-        [InverseProperty(nameof(Providers.providerprovince))]
-        public Providers? provide { get; set; }
-
-        [ForeignKey(nameof(ProvinceId))]
-        [InverseProperty(nameof(Provinces.providerprovince))]
-        public Provinces? province { get; set; }
-
-        [ForeignKey(nameof(CompanyId))]
-        [InverseProperty(nameof(Companies.providerprovince))]
-        public Companies? company { get; set; }
-
     }
 }

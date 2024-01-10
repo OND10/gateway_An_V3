@@ -17,7 +17,6 @@ namespace GatewayDomain.Entities
         public string PurposeName { get; set; } = string.Empty;
         public string PurposeDescription { get; set; } = string.Empty;
         
-        [InverseProperty(nameof(ProviderPurposes.purpose))]
         public ICollection<ProviderPurposes>? providerpurpose { get; set; }
     }
 }

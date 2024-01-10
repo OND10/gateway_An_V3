@@ -11,10 +11,7 @@ namespace GatewayDomain.Entities
 {
     public class Currencies:AuditableEntity
     {
-        public Currencies()
-        {
-            providercurrencies = new HashSet<ProviderCurrencies>();
-        }
+     
 
         [Key]
         public int CurrencyId { get; set; }
@@ -22,8 +19,7 @@ namespace GatewayDomain.Entities
         public string CurrencyEnglishName { get; set; } = string.Empty;
         public string CurrencyType {  get; set; } = string.Empty;
         public string CurrencyCode { get; set; }= string.Empty;
-
-        [InverseProperty(nameof(ProviderCurrencies.currency))]
+        
         public ICollection<ProviderCurrencies>? providercurrencies { get; set; }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GatewayDomain.Interfaces
 {
-    public interface IProviderCompanyRepository: IGenericRepository<ProviderCompanies>
+    public interface IProductRepository:IGenericRepository<Products>
     {
     }
 }

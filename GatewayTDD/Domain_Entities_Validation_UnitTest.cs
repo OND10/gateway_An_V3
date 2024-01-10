@@ -4,21 +4,19 @@ using Moq;
 
 namespace GatewayTDD
 {
-    public class UnitTest1
+    public class Domain_Entities_Validation_UnitTest
     {
         private readonly Mock<IBaseValidation> _mock;
-        public UnitTest1()
+        public Domain_Entities_Validation_UnitTest()
         {
                 _mock = new Mock<IBaseValidation>();
         }
 
         [Fact]
-        public async Task Domain_Validation_Test_Method()
+        public async Task Domain_Validation_Is_Valid_Test_Method()
         {
-
-
             //Arange
-            Companies companies = new Companies();
+            Company companies = new Company();
             _mock.Setup(demo => demo.isValid()).ReturnsAsync(await companies.isValid());
 
             //Acting

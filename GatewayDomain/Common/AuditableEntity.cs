@@ -8,7 +8,7 @@ namespace GatewayDomain.Common
 {
     public class AuditableEntity
     {
-        public int UserID { get; set; }
+        public int UserId { get; set; }
         public DateTime CreatedById { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedById { get; set; }

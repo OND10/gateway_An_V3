@@ -9,13 +9,8 @@ using System.Threading.Tasks;
 
 namespace Gateway_Domain.Entities
 {
-    public class Countries
+    public class Country
     {
-
-        public Countries()
-        {
-                providercountrie = new HashSet<ProviderCountries>();
-        }
 
         [Key]
         public int CountryId { get; set; }
@@ -23,7 +18,6 @@ namespace Gateway_Domain.Entities
         public string CountryCode { get; set; }=string.Empty;
         public string CountryDescription { get; set; }= string.Empty;
 
-        [InverseProperty(nameof(ProviderCountries.country))]
         public ICollection<ProviderCountries>? providercountrie {  get; set; }
 
     }

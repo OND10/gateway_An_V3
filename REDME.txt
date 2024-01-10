@@ -12,3 +12,10 @@
 # One to many relationship between the categories and company
 # One to many relationship between the customer and company
 
+###########################################################################
+
+# Today we added IRepositories
+# Mocking these repositories for testing
+# Block off all related objects to be cautioned from the database concurrency
+
+

@@ -12,11 +12,6 @@ namespace Gateway_Domain.Entities
     public class Regions
     {
 
-        public Regions()
-        {
-            providerregion = new HashSet<ProviderRegions>();
-        }
-
         [Key]
         public int RegionId { get; set; }
 
@@ -24,7 +19,6 @@ namespace Gateway_Domain.Entities
 
         public string RegioDescription { get; set; } = string.Empty;
 
-        [InverseProperty(nameof(ProviderRegions.region))]
         public ICollection<ProviderRegions>? providerregion { get; set; }
 
     }

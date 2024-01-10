@@ -12,21 +12,12 @@ using System.Text.RegularExpressions;
 
 namespace Gateway_Domain.Entities
 {
-    public class Companies:AuditableEntity,IBaseValidation
+    public class Company:AuditableEntity,IBaseValidation
     {
-        public Companies()
-        {
-            providercompanies = new HashSet<ProviderCompanies>();
-            providercurrencies = new HashSet<ProviderCurrencies>();
-            servicesprovider = new HashSet<ServicesProvider>();
-            providerpurpose = new HashSet<ProviderPurposes>();
-            providercountrie = new HashSet<ProviderCountries>();
-            providerprovince = new HashSet<ProviderProvinces>();
-            providerregion = new HashSet<ProviderRegions>(); 
-        }
+      
 
         [Key]
-        public int CompanyId { get; set; }
+        public int CompanyId { get; set; }//1
         public string CompanyEnglishName { get; set; } = "";
         public string CompanyArabicName { get; set; } = "";
         public string CompanyDescription { get; set; } = string.Empty;
@@ -38,33 +29,34 @@ namespace Gateway_Domain.Entities
         public IFormFile? Companylogo { get; set; }
         public string LogoUrl { get; set; } = string.Empty;
 
-        [InverseProperty(nameof(ProviderCompanies.company))]
+        
         public ICollection<ProviderCompanies>? providercompanies { get; set; }
 
-        [InverseProperty(nameof(ProviderCurrencies.company))]
         public ICollection<ProviderCurrencies>? providercurrencies { get; set; }
 
-        [InverseProperty(nameof(ServicesProvider.company))]
+       
         public ICollection<ServicesProvider>? servicesprovider { get; set; }
 
-        [InverseProperty(nameof(ProviderPurposes.company))]
+      
         public ICollection<ProviderPurposes>? providerpurpose { get; set; }
 
-        [InverseProperty(nameof(ProviderCountries.company))]
         public ICollection<ProviderCountries>? providercountrie { get; set; }
 
-        [InverseProperty(nameof(ProviderProvinces.company))]
+    
         public ICollection<ProviderProvinces>? providerprovince { get; set; }
 
-        [InverseProperty(nameof(ProviderRegions.company))]
+   
         public ICollection<ProviderRegions>? providerregion { get; set; }
+
+        public ICollection<Products>? products { get; set; }
+
+
+        //Validations
 
         string emailPattern = @"^\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b";
 
         string phoneNumberPattern = @"^(77|78|73|71)\d{9}$";
-        
-        
-        //Validations
+
 
         public async Task<string> isValid()
         {
